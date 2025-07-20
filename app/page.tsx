@@ -99,13 +99,13 @@ export default function Home() {
                   transition={{ duration: 1.5, delay: 0.3 }}
                 >
                   NEON
-                  <span className="text-violet-500" style={{
+                    <span className="text-violet-500" style={{
                     textShadow: `
-                      0 0 10px rgba(139, 92, 246, 1.0),
-                      0 0 20px rgba(139, 92, 246, 0.8),
-                      0 0 40px rgba(139, 92, 246, 0.6)
+                      0 0 10px rgba(255, 255, 255, 1.0),
+                      0 0 20px rgba(255, 255, 255, 0.8),
+                      0 0 40px rgba(255, 255, 255, 0.6)
                     `
-                  }}>PULSE</span>
+                    }}>PULSE</span>
                 </motion.h1>
                 
                 <motion.div
@@ -123,10 +123,10 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, delay: 1 }}
                 >
-                  Digital architect crafting immersive experiences
+                  Fullstack developer with root access to chaos  
                   <br />
                   <span className="text-purple-400 cyber-text text-sm">
-                    in the intersection of art and technology
+                  if it compiles, it ships. if not, we blame the OS ;)
                   </span>
                 </motion.p>
 
@@ -190,6 +190,25 @@ export default function Home() {
                       0 0 15px rgba(196, 181, 253, 0.4)
                     `
                   }}>PROJECTS.DB</span>
+                  {/* Dynamic underline */}
+                  <div className="absolute bottom-2 left-4 right-4 h-0.5 bg-gradient-to-r from-transparent via-violet-400 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></div>
+                  {/* Side glow effects */}
+                  <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-0.5 h-0 bg-violet-400 opacity-0 group-hover:h-6 group-hover:opacity-100 transition-all duration-300"></div>
+                  <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-0.5 h-0 bg-violet-400 opacity-0 group-hover:h-6 group-hover:opacity-100 transition-all duration-300"></div>
+                </motion.button>
+                
+                <motion.button
+                  className="cyber-panel px-8 py-4 text-violet-300 hover:text-violet-100 transition-colors duration-300 relative overflow-hidden group"
+                  whileHover={{ y: -2 }}
+                  onClick={() => window.open('/resume.pdf', '_blank')}
+                >
+                  <span className="relative z-10 cyber-text tracking-wider font-bold" style={{
+                    textShadow: `
+                      0 0 5px rgba(196, 181, 253, 0.8),
+                      0 0 10px rgba(196, 181, 253, 0.6),
+                      0 0 15px rgba(196, 181, 253, 0.4)
+                    `
+                  }}>RESUME.ME</span>
                   {/* Dynamic underline */}
                   <div className="absolute bottom-2 left-4 right-4 h-0.5 bg-gradient-to-r from-transparent via-violet-400 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></div>
                   {/* Side glow effects */}

@@ -65,105 +65,112 @@ export default function ContactPage() {
           <div className="w-32 h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent mx-auto"></div>
         </motion.div>
 
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-5 gap-16 mb-20">
-          {/* Contact Info */}
-          <motion.div
-            className="lg:col-span-2 space-y-8"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            {/* Primary Contact */}
-            <div className="cyber-panel p-8 relative overflow-hidden">
-              <div className="holographic absolute inset-0 opacity-10"></div>
-              
-              <div className="relative z-10">
-                <div className="flex items-center mb-6">
-                  <div className="w-2 h-2 bg-green-400 mr-4 animate-pulse"></div>
-                  <h2 className="cyber-text text-xl font-bold text-purple-300">DIRECT.LINE</h2>
-                </div>
+        <div className="max-w-7xl mx-auto mb-20">
+          {/* Desktop Layout - Side by Side */}
+          <div className="hidden lg:grid lg:grid-cols-2 gap-16">
+            {/* Left Column - Contact Info */}
+            <div className="space-y-8">
+              {/* Primary Contact */}
+              <motion.div
+                className="cyber-panel p-8 relative overflow-hidden"
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                <div className="holographic absolute inset-0 opacity-10"></div>
                 
-                <div className="space-y-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 border border-purple-500/50 flex items-center justify-center mt-1">
-                      <div className="w-2 h-2 bg-purple-400"></div>
-                    </div>
-                    <div>
-                      <div className="cyber-text text-xs text-purple-400 mb-1">EMAIL.PROTOCOL</div>
-                      <div className="text-white font-light">hello@neonpulse.dev</div>
-                    </div>
+                <div className="relative z-10">
+                  <div className="flex items-center mb-6">
+                    <div className="w-2 h-2 bg-green-400 mr-4 animate-pulse"></div>
+                    <h2 className="cyber-text text-xl font-bold text-purple-300">DIRECT.LINE</h2>
                   </div>
                   
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 border border-purple-500/50 flex items-center justify-center mt-1">
-                      <div className="w-2 h-2 bg-blue-400"></div>
-                    </div>
-                    <div>
-                      <div className="cyber-text text-xs text-purple-400 mb-1">TIME.ZONE</div>
-                      <div className="text-white font-light">UTC-5 (EST)</div>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 border border-purple-500/50 flex items-center justify-center mt-1">
-                      <div className="w-2 h-2 bg-green-400 animate-pulse"></div>
-                    </div>
-                    <div>
-                      <div className="cyber-text text-xs text-purple-400 mb-1">RESPONSE.TIME</div>
-                      <div className="text-white font-light">{'<'} 24 Hours</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Social Networks */}
-            <div className="cyber-panel p-8 relative overflow-hidden">
-              <div className="holographic absolute inset-0 opacity-10"></div>
-              
-              <div className="relative z-10">
-                <div className="flex items-center mb-6">
-                  <div className="w-2 h-2 bg-purple-500 mr-4 animate-pulse"></div>
-                  <h3 className="cyber-text text-xl font-bold text-purple-300">NETWORK.LINKS</h3>
-                </div>
-                
-                <div className="space-y-4">
-                  {[
-                    { name: 'GITHUB', url: '#', status: 'ACTIVE', color: 'green' },
-                    { name: 'LINKEDIN', url: '#', status: 'ACTIVE', color: 'blue' },
-                    { name: 'DRIBBBLE', url: '#', status: 'ACTIVE', color: 'purple' },
-                    { name: 'BEHANCE', url: '#', status: 'LIMITED', color: 'yellow' }
-                  ].map((link) => (
-                    <div key={link.name} className="flex items-center justify-between group">
-                      <a
-                        href={link.url}
-                        className="text-white hover:text-purple-300 transition-colors duration-300 font-light tracking-wide group-hover:neon-glow"
-                      >
-                        {link.name}
-                      </a>
-                      <div className="flex items-center space-x-2">
-                        <div className={`w-2 h-2 rounded-full animate-pulse ${
-                          link.color === 'green' ? 'bg-green-400' :
-                          link.color === 'blue' ? 'bg-blue-400' :
-                          link.color === 'purple' ? 'bg-purple-400' : 'bg-yellow-400'
-                        }`}></div>
-                        <span className="cyber-text text-xs text-purple-500">{link.status}</span>
+                  <div className="space-y-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="w-8 h-8 border border-purple-500/50 flex items-center justify-center mt-1">
+                        <div className="w-2 h-2 bg-purple-400"></div>
+                      </div>
+                      <div>
+                        <div className="cyber-text text-xs text-purple-400 mb-1">EMAIL.PROTOCOL</div>
+                        <div className="text-white font-light">neonpulse142k@gmail.com</div>
                       </div>
                     </div>
-                  ))}
+                    
+                    <div className="flex items-start space-x-4">
+                      <div className="w-8 h-8 border border-purple-500/50 flex items-center justify-center mt-1">
+                        <div className="w-2 h-2 bg-blue-400"></div>
+                      </div>
+                      <div>
+                        <div className="cyber-text text-xs text-purple-400 mb-1">TIME.ZONE</div>
+                        <div className="text-white font-light">UTC+05:30 (EST)</div>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start space-x-4">
+                      <div className="w-8 h-8 border border-purple-500/50 flex items-center justify-center mt-1">
+                        <div className="w-2 h-2 bg-green-400 animate-pulse"></div>
+                      </div>
+                      <div>
+                        <div className="cyber-text text-xs text-purple-400 mb-1">RESPONSE.TIME</div>
+                        <div className="text-white font-light">{'<'} 24 Hours</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </motion.div>
+              </motion.div>
 
-          {/* Contact Form */}
-          <motion.div
-            className="lg:col-span-3"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <div className="cyber-panel p-8 relative overflow-hidden">
+              {/* Social Networks */}
+              <motion.div
+                className="cyber-panel p-8 relative overflow-hidden"
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                <div className="holographic absolute inset-0 opacity-10"></div>
+                
+                <div className="relative z-10">
+                  <div className="flex items-center mb-6">
+                    <div className="w-2 h-2 bg-purple-500 mr-4 animate-pulse"></div>
+
+                    <h3 className="cyber-text text-xl font-bold text-purple-300">NETWORK.LINKS</h3>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    {[
+                      { name: 'GITHUB', url: 'https://github.com/D-Zoro', status: 'ACTIVE', color: 'green' },
+                      { name: 'LINKEDIN', url: 'https://www.linkedin.com/in/neonpulse/', status: 'ACTIVE', color: 'green' },
+                      { name: 'LEETCODE', url: 'https://leetcode.com/u/neon_pulse/', status: 'INACTIVE', color: 'purple' },
+                      { name: 'INSTAGRAM', url: 'https://www.instagram.com/nish_ain.t/', status: 'LIMITED', color: 'yellow' }
+                    ].map((link) => (
+                      <div key={link.name} className="flex items-center justify-between group">
+                        <a
+                          href={link.url}
+                          className="text-white hover:text-purple-300 transition-colors duration-300 font-light tracking-wide group-hover:neon-glow"
+                        >
+                          {link.name}
+                        </a>
+                        <div className="flex items-center space-x-2">
+                          <div className={`w-2 h-2 rounded-full animate-pulse ${
+                            link.color === 'green' ? 'bg-green-400' :
+                            link.color === 'blue' ? 'bg-blue-400' :
+                            link.color === 'purple' ? 'bg-purple-400' : 'bg-yellow-400'
+                          }`}></div>
+                          <span className="cyber-text text-xs text-purple-500">{link.status}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Right Column - Contact Form */}
+            <motion.div
+              className="cyber-panel p-8 relative overflow-hidden h-fit"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
               <div className="holographic absolute inset-0 opacity-10"></div>
               
               <div className="relative z-10">
@@ -249,8 +256,12 @@ export default function ContactPage() {
                     <motion.button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full cyber-panel py-4 px-6 text-white cyber-text text-sm hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+                      className="w-full bg-gradient-to-r from-purple-600 to-purple-500 border border-purple-400 rounded-lg py-4 px-6 text-white cyber-text text-sm font-bold hover:from-purple-500 hover:to-purple-400 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 shadow-lg"
                       whileTap={{ scale: 0.98 }}
+                      style={{
+                        textShadow: '0 0 10px rgba(255, 255, 255, 0.5)',
+                        boxShadow: '0 0 20px rgba(139, 92, 246, 0.3)'
+                      }}
                     >
                       {isSubmitting ? (
                         <div className="flex items-center justify-center space-x-3">
@@ -264,13 +275,222 @@ export default function ContactPage() {
                   </form>
                 )}
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
+
+          {/* Mobile Layout - Stacked */}
+          <div className="lg:hidden space-y-8">
+            {/* Contact Info - Mobile */}
+            <motion.div
+              className="cyber-panel p-8 relative overflow-hidden"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              {/* Primary Contact */}
+              <div className="cyber-panel p-8 relative overflow-hidden">
+                <div className="holographic absolute inset-0 opacity-10"></div>
+                
+                <div className="relative z-10">
+                  <div className="flex items-center mb-6">
+                    <div className="w-2 h-2 bg-green-400 mr-4 animate-pulse"></div>
+                    <h2 className="cyber-text text-xl font-bold text-purple-300">DIRECT.LINE</h2>
+                  </div>
+                  
+                  <div className="space-y-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="w-8 h-8 border border-purple-500/50 flex items-center justify-center mt-1">
+                        <div className="w-2 h-2 bg-purple-400"></div>
+                      </div>
+                      <div>
+                        <div className="cyber-text text-xs text-purple-400 mb-1">EMAIL.PROTOCOL</div>
+                        <div className="text-white font-light">neonpulse142k@gmail.com</div>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start space-x-4">
+                      <div className="w-8 h-8 border border-purple-500/50 flex items-center justify-center mt-1">
+                        <div className="w-2 h-2 bg-blue-400"></div>
+                      </div>
+                      <div>
+                        <div className="cyber-text text-xs text-purple-400 mb-1">TIME.ZONE</div>
+                        <div className="text-white font-light">UTC+05:30 (EST)</div>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start space-x-4">
+                      <div className="w-8 h-8 border border-purple-500/50 flex items-center justify-center mt-1">
+                        <div className="w-2 h-2 bg-green-400 animate-pulse"></div>
+                      </div>
+                      <div>
+                        <div className="cyber-text text-xs text-purple-400 mb-1">RESPONSE.TIME</div>
+                        <div className="text-white font-light">{'<'} 24 Hours</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-purple-500/30 grid grid-cols-3 gap-6"></div>
+
+              {/* Social Networks */}
+              <div className="cyber-panel p-8 relative overflow-hidden">
+                <div className="holographic absolute inset-0 opacity-10"></div>
+                
+                <div className="relative z-10">
+                  <div className="flex items-center mb-6">
+                    <div className="w-2 h-2 bg-purple-500 mr-4 animate-pulse"></div>
+
+                    <h3 className="cyber-text text-xl font-bold text-purple-300">NETWORK.LINKS</h3>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    {[
+                      { name: 'GITHUB', url: 'https://github.com/D-Zoro', status: 'ACTIVE', color: 'green' },
+                      { name: 'LINKEDIN', url: 'https://www.linkedin.com/in/neonpulse/', status: 'ACTIVE', color: 'green' },
+                      { name: 'LEETCODE', url: 'https://leetcode.com/u/neon_pulse/', status: 'INACTIVE', color: 'purple' },
+                      { name: 'INSTAGRAM', url: 'https://www.instagram.com/nish_ain.t/', status: 'LIMITED', color: 'yellow' }
+                    ].map((link) => (
+                      <div key={link.name} className="flex items-center justify-between group">
+                        <a
+                          href={link.url}
+                          className="text-white hover:text-purple-300 transition-colors duration-300 font-light tracking-wide group-hover:neon-glow"
+                        >
+                          {link.name}
+                        </a>
+                        <div className="flex items-center space-x-2">
+                          <div className={`w-2 h-2 rounded-full animate-pulse ${
+                            link.color === 'green' ? 'bg-green-400' :
+                            link.color === 'blue' ? 'bg-blue-400' :
+                            link.color === 'purple' ? 'bg-purple-400' : 'bg-yellow-400'
+                          }`}></div>
+                          <span className="cyber-text text-xs text-purple-500">{link.status}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Contact Form - Mobile */}
+            <motion.div
+              className="cyber-panel p-8 relative overflow-hidden"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              <div className="holographic absolute inset-0 opacity-10"></div>
+              
+              <div className="relative z-10">
+                <div className="flex items-center mb-8">
+                  <div className="w-2 h-2 bg-purple-500 mr-4 animate-pulse"></div>
+                  <h2 className="cyber-text text-xl font-bold text-purple-300">MESSAGE.INTERFACE</h2>
+                </div>
+
+                {submitStatus === 'success' ? (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="text-center py-20"
+                  >
+                    <div className="w-20 h-20 border-2 border-green-400 mx-auto mb-6 flex items-center justify-center relative">
+                      <div className="w-8 h-8 bg-green-400 animate-pulse"></div>
+                      <div className="absolute inset-0 border-green-400 animate-ping"></div>
+                    </div>
+                    <h3 className="cyber-text text-2xl font-bold text-green-400 mb-4 neon-glow">
+                      TRANSMISSION.COMPLETE
+                    </h3>
+                    <p className="text-purple-300">Message successfully transmitted to neural network</p>
+                  </motion.div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-8">
+                    <div className="grid md:grid-cols-2 gap-8">
+                      <div>
+                        <label className="block cyber-text text-xs text-purple-400 mb-3">
+                          USER.IDENTITY
+                        </label>
+                        <input
+                          type="text"
+                          value={formData.name}
+                          onChange={(e) => handleInputChange('name', e.target.value)}
+                          className="w-full bg-transparent border border-purple-500/30 px-4 py-4 text-white placeholder-purple-500/50 focus:border-purple-400 focus:outline-none transition-colors duration-300 font-light"
+                          placeholder="Enter your designation"
+                          required
+                        />
+                      </div>
+                      <div>
+                        <label className="block cyber-text text-xs text-purple-400 mb-3">
+                          COMM.CHANNEL
+                        </label>
+                        <input
+                          type="email"
+                          value={formData.email}
+                          onChange={(e) => handleInputChange('email', e.target.value)}
+                          className="w-full bg-transparent border border-purple-500/30 px-4 py-4 text-white placeholder-purple-500/50 focus:border-purple-400 focus:outline-none transition-colors duration-300 font-light"
+                          placeholder="neural@interface.net"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block cyber-text text-xs text-purple-400 mb-3">
+                        MESSAGE.HEADER
+                      </label>
+                      <input
+                        type="text"
+                        value={formData.subject}
+                        onChange={(e) => handleInputChange('subject', e.target.value)}
+                        className="w-full bg-transparent border border-purple-500/30 px-4 py-4 text-white placeholder-purple-500/50 focus:border-purple-400 focus:outline-none transition-colors duration-300 font-light"
+                        placeholder="Transmission subject protocol"
+                        required
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block cyber-text text-xs text-purple-400 mb-3">
+                        DATA.PAYLOAD
+                      </label>
+                      <textarea
+                        value={formData.message}
+                        onChange={(e) => handleInputChange('message', e.target.value)}
+                        rows={6}
+                        className="w-full bg-transparent border border-purple-500/30 px-4 py-4 text-white placeholder-purple-500/50 focus:border-purple-400 focus:outline-none transition-colors duration-300 resize-none font-light"
+                        placeholder="Transmit your message through the neural network..."
+                        required
+                      />
+                    </div>
+
+                    <motion.button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full bg-gradient-to-r from-purple-600 to-purple-500 border border-purple-400 rounded-lg py-4 px-6 text-white cyber-text text-sm font-bold hover:from-purple-500 hover:to-purple-400 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 shadow-lg"
+                      whileTap={{ scale: 0.98 }}
+                      style={{
+                        textShadow: '0 0 10px rgba(255, 255, 255, 0.5)',
+                        boxShadow: '0 0 20px rgba(139, 92, 246, 0.3)'
+                      }}
+                    >
+                      {isSubmitting ? (
+                        <div className="flex items-center justify-center space-x-3">
+                          <div className="w-4 h-4 border border-purple-400 border-t-transparent animate-spin rounded-full"></div>
+                          <span>TRANSMITTING...</span>
+                        </div>
+                      ) : (
+                        'INITIATE.TRANSMISSION'
+                      )}
+                    </motion.button>
+                  </form>
+                )}
+              </div>
+            </motion.div>
+          </div>
         </div>
 
         {/* Back Navigation */}
         <motion.div
-          className="fixed bottom-8 left-8 z-30"
+          className="mb-8 flex justify-start"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 1.2 }}
