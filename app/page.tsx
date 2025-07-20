@@ -1,24 +1,43 @@
 'use client';
 
 import { Canvas } from '@react-three/fiber';
-import { Suspense, useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { Suspense, useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence, useMotionValue, useTransform } from 'framer-motion';
 import CyberScene from '@/components/CyberScene';
-import CyberNavigation from '@/components/CyberNavigation';
 import CyberLoader from '@/components/CyberLoader';
+import { useRouter } from 'next/navigation';
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 export default function Home() {
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
   const [showContent, setShowContent] = useState(false);
+  const group = useRef();
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const x = useTransform(mouseX, [-100, 100], [-10, 10]);
+  const y = useTransform(mouseY, [-100, 100], [-10, 10]);
 
   useEffect(() => {
+    const handleMouseMove = (event) => {
+      const { clientX, clientY } = event;
+      mouseX.set(clientX);
+      mouseY.set(clientY);
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+
     const timer = setTimeout(() => {
       setIsLoading(false);
       setTimeout(() => setShowContent(true), 500);
     }, 4000);
 
-    return () => clearTimeout(timer);
-  }, []);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      clearTimeout(timer);
+    };
+  }, [mouseX, mouseY]);
 
   return (
     <div className="relative w-full h-screen overflow-hidden bg-cyber-dark">
@@ -116,8 +135,68 @@ export default function Home() {
               </div>
             </motion.div>
 
-            {/* Navigation Elements */}
-            <CyberNavigation />
+            {/* Navigation Links */}
+            <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 flex flex-col items-center space-y-6 z-50">
+              <div className="flex justify-center space-x-16">
+                <motion.button
+                  className="w-44 h-12 text-lg font-bold text-purple-300 border border-purple-500/30 rounded-lg transition-all duration-150 neon-glow hacker-text bg-gradient-to-t from-purple-700 to-purple-500 hover:from-purple-600 hover:to-purple-400"
+                  whileHover={{ scale: 1.2, boxShadow: "0px 0px 12px 3px #8b5cf6" }}
+                  onClick={() => router.push('/about')}
+                >
+                  About
+                </motion.button>
+                <motion.button
+                  className="w-44 h-12 text-lg font-bold text-purple-300 border border-purple-500/30 rounded-lg transition-all duration-150 neon-glow hacker-text bg-gradient-to-t from-purple-700 to-purple-500 hover:from-purple-600 hover:to-purple-400"
+                  whileHover={{ scale: 1.2, boxShadow: "0px 0px 12px 3px #8b5cf6" }}
+                  onClick={() => router.push('/projects')}
+                >
+                  Projects
+                </motion.button>
+              </div>
+              <motion.button
+                className="w-44 h-12 text-lg font-bold text-purple-300 border border-purple-500/30 rounded-lg transition-all duration-150 neon-glow hacker-text bg-gradient-to-t from-purple-700 to-purple-500 hover:from-purple-600 hover:to-purple-400"
+                whileHover={{ scale: 1.2, boxShadow: "0px 0px 12px 3px #8b5cf6" }}
+                onClick={() => router.push('/contact')}
+              >
+                Contact
+              </motion.button>
+            </div>
+
+            {/* Faint Light Text */}
+            <div className="absolute top-4 left-4 text-xs text-purple-500 opacity-70">
+              portfolio-v.1/D-Zoro
+            </div>
+
+            {/* Social Links */}
+            <div className="absolute top-4 right-4 flex space-x-4 z-50">
+              <motion.a
+                href="https://www.linkedin.com/in/your-profile"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 flex items-center justify-center bg-purple-500 rounded-full border border-purple-700 text-white"
+                whileHover={{ rotate: 360 }}
+              >
+                <FaLinkedin className="w-6 h-6" />
+              </motion.a>
+              <motion.a
+                href="https://github.com/your-profile"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 flex items-center justify-center bg-purple-500 rounded-full border border-purple-700 text-white"
+                whileHover={{ rotate: 360 }}
+              >
+                <FaGithub className="w-6 h-6" />
+              </motion.a>
+            </div>
+
+            {/* Return Home Button */}
+            <motion.button
+              className="px-6 py-3 text-lg font-bold text-purple-300 border border-purple-500/30 rounded-lg hover:text-white hover:border-purple-400 transition-all duration-300 neon-glow hacker-text mt-12"
+              whileHover={{ scale: 1.1, boxShadow: "0px 0px 10px 2px #8b5cf6" }}
+              onClick={() => router.push('/')}
+            >
+              Return Home
+            </motion.button>
 
             {/* Corner Decorations */}
             <motion.div

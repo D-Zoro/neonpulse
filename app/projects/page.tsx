@@ -80,7 +80,7 @@ function ProjectCard({ project, index }) {
 
 	return (
 		<motion.div
-			className="cyber-panel p-6 relative overflow-hidden group cursor-pointer"
+			className="cyber-panel p-6 relative overflow-hidden group cursor-pointer bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl shadow-xl hover:shadow-purple-500/20 transition-all duration-500"
 			initial={{ opacity: 0, y: 30 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -88,7 +88,7 @@ function ProjectCard({ project, index }) {
 			onHoverEnd={() => setIsHovered(false)}
 		>
 			{/* Holographic background */}
-			<div className="absolute inset-0 holographic opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+			<div className="absolute inset-0 holographic opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-2xl"></div>
 
 			{/* Project ID */}
 			<div className="absolute top-4 right-4 cyber-text text-sm text-purple-500 opacity-60">
