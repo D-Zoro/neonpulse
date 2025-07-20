@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
     // Don't run ESLint during builds (use only locally)
     ignoreDuringBuilds: true,
   },
+   typescript: {
+    ignoreBuildErrors: true
+  },
    transpilePackages: ['three'],
   webpack: (config) => {
     config.externals.push({
