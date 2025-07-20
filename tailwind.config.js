@@ -17,7 +17,9 @@ module.exports = {
         }
       },
       fontFamily: {
-        mono: ['Monaco', 'Menlo', 'Ubuntu Mono', 'monospace']
+        mono: ['Monaco', 'Menlo', 'Ubuntu Mono', 'monospace'],
+        sora: ['Sora', 'Inter', 'ui-sans-serif', 'system-ui'],
+        inter: ['Inter', 'ui-sans-serif', 'system-ui'],
       }
     },
   },
