@@ -276,10 +276,14 @@ export default function ContactPage() {
           transition={{ duration: 0.6, delay: 1.2 }}
         >
           <Link href="/">
-            <div className="cyber-panel px-6 py-3 cursor-pointer group hover:scale-105 transition-transform duration-300">
-              <span className="cyber-text text-purple-300 group-hover:text-white transition-colors duration-300">
+            <div className="relative cursor-pointer group">
+              <span className="cyber-text text-lg text-purple-300 group-hover:text-purple-100 transition-colors duration-300 font-semibold tracking-wider">
                 ← RETURN.HOME
               </span>
+              {/* Dynamic underline */}
+              <div className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-purple-500 via-purple-300 to-purple-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></div>
+              {/* Glowing dot */}
+              <div className="absolute -left-2 top-1/2 transform -translate-y-1/2 w-1 h-1 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
           </Link>
         </motion.div>

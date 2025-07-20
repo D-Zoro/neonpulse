@@ -83,13 +83,29 @@ export default function Home() {
             >
               <div className="text-center">
                 <motion.h1
-                  className="cyber-text text-6xl md:text-8xl lg:text-9xl font-bold text-white neon-glow mb-6"
+                  className="cyber-text text-6xl md:text-8xl lg:text-9xl font-bold text-white mb-6 font-rounded"
+                  style={{
+                    fontFamily: "'Orbitron', 'Exo 2', 'Rajdhani', sans-serif",
+                    textShadow: `
+                      0 0 10px rgba(168, 85, 247, 0.8),
+                      0 0 20px rgba(168, 85, 247, 0.6),
+                      0 0 40px rgba(168, 85, 247, 0.4),
+                      0 0 80px rgba(168, 85, 247, 0.2)
+                    `,
+                    filter: 'brightness(1.2)'
+                  }}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 1.5, delay: 0.3 }}
                 >
                   NEON
-                  <span className="text-purple-400">PULSE</span>
+                  <span className="text-violet-500" style={{
+                    textShadow: `
+                      0 0 10px rgba(139, 92, 246, 1.0),
+                      0 0 20px rgba(139, 92, 246, 0.8),
+                      0 0 40px rgba(139, 92, 246, 0.6)
+                    `
+                  }}>PULSE</span>
                 </motion.h1>
                 
                 <motion.div
@@ -136,31 +152,71 @@ export default function Home() {
             </motion.div>
 
             {/* Navigation Links */}
-            <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 flex flex-col items-center space-y-6 z-50">
-              <div className="flex justify-center space-x-16">
+            <motion.div
+              className="absolute bottom-0 left-0 right-0 flex justify-center items-end pb-8 z-50"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 1.5 }}
+            >
+              <div className="flex space-x-8">
                 <motion.button
-                  className="w-44 h-12 text-lg font-bold text-purple-300 border border-purple-500/30 rounded-lg transition-all duration-150 neon-glow hacker-text bg-gradient-to-t from-purple-700 to-purple-500 hover:from-purple-600 hover:to-purple-400"
-                  whileHover={{ scale: 1.2, boxShadow: "0px 0px 12px 3px #8b5cf6" }}
+                  className="cyber-panel px-8 py-4 text-violet-300 hover:text-violet-100 transition-colors duration-300 relative overflow-hidden group"
+                  whileHover={{ y: -2 }}
                   onClick={() => router.push('/about')}
                 >
-                  About
+                  <span className="relative z-10 cyber-text tracking-wider font-bold" style={{
+                    textShadow: `
+                      0 0 5px rgba(196, 181, 253, 0.8),
+                      0 0 10px rgba(196, 181, 253, 0.6),
+                      0 0 15px rgba(196, 181, 253, 0.4)
+                    `
+                  }}>ABOUT.EXE</span>
+                  {/* Dynamic underline */}
+                  <div className="absolute bottom-2 left-4 right-4 h-0.5 bg-gradient-to-r from-transparent via-violet-400 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></div>
+                  {/* Side glow effects */}
+                  <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-0.5 h-0 bg-violet-400 opacity-0 group-hover:h-6 group-hover:opacity-100 transition-all duration-300"></div>
+                  <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-0.5 h-0 bg-violet-400 opacity-0 group-hover:h-6 group-hover:opacity-100 transition-all duration-300"></div>
                 </motion.button>
+                
                 <motion.button
-                  className="w-44 h-12 text-lg font-bold text-purple-300 border border-purple-500/30 rounded-lg transition-all duration-150 neon-glow hacker-text bg-gradient-to-t from-purple-700 to-purple-500 hover:from-purple-600 hover:to-purple-400"
-                  whileHover={{ scale: 1.2, boxShadow: "0px 0px 12px 3px #8b5cf6" }}
+                  className="cyber-panel px-8 py-4 text-violet-300 hover:text-violet-100 transition-colors duration-300 relative overflow-hidden group"
+                  whileHover={{ y: -2 }}
                   onClick={() => router.push('/projects')}
                 >
-                  Projects
+                  <span className="relative z-10 cyber-text tracking-wider font-bold" style={{
+                    textShadow: `
+                      0 0 5px rgba(196, 181, 253, 0.8),
+                      0 0 10px rgba(196, 181, 253, 0.6),
+                      0 0 15px rgba(196, 181, 253, 0.4)
+                    `
+                  }}>PROJECTS.DB</span>
+                  {/* Dynamic underline */}
+                  <div className="absolute bottom-2 left-4 right-4 h-0.5 bg-gradient-to-r from-transparent via-violet-400 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></div>
+                  {/* Side glow effects */}
+                  <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-0.5 h-0 bg-violet-400 opacity-0 group-hover:h-6 group-hover:opacity-100 transition-all duration-300"></div>
+                  <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-0.5 h-0 bg-violet-400 opacity-0 group-hover:h-6 group-hover:opacity-100 transition-all duration-300"></div>
+                </motion.button>
+                
+                <motion.button
+                  className="cyber-panel px-8 py-4 text-violet-300 hover:text-violet-100 transition-colors duration-300 relative overflow-hidden group"
+                  whileHover={{ y: -2 }}
+                  onClick={() => router.push('/contact')}
+                >
+                  <span className="relative z-10 cyber-text tracking-wider font-bold" style={{
+                    textShadow: `
+                      0 0 5px rgba(196, 181, 253, 0.8),
+                      0 0 10px rgba(196, 181, 253, 0.6),
+                      0 0 15px rgba(196, 181, 253, 0.4)
+                    `
+                  }}>CONTACT.NET</span>
+                  {/* Dynamic underline */}
+                  <div className="absolute bottom-2 left-4 right-4 h-0.5 bg-gradient-to-r from-transparent via-violet-400 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></div>
+                  {/* Side glow effects */}
+                  <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-0.5 h-0 bg-violet-400 opacity-0 group-hover:h-6 group-hover:opacity-100 transition-all duration-300"></div>
+                  <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-0.5 h-0 bg-violet-400 opacity-0 group-hover:h-6 group-hover:opacity-100 transition-all duration-300"></div>
                 </motion.button>
               </div>
-              <motion.button
-                className="w-44 h-12 text-lg font-bold text-purple-300 border border-purple-500/30 rounded-lg transition-all duration-150 neon-glow hacker-text bg-gradient-to-t from-purple-700 to-purple-500 hover:from-purple-600 hover:to-purple-400"
-                whileHover={{ scale: 1.2, boxShadow: "0px 0px 12px 3px #8b5cf6" }}
-                onClick={() => router.push('/contact')}
-              >
-                Contact
-              </motion.button>
-            </div>
+            </motion.div>
 
             {/* Faint Light Text */}
             <div className="absolute top-4 left-4 text-xs text-purple-500 opacity-70">
@@ -170,7 +226,7 @@ export default function Home() {
             {/* Social Links */}
             <div className="absolute top-4 right-4 flex space-x-4 z-50">
               <motion.a
-                href="https://www.linkedin.com/in/your-profile"
+                href="https://www.linkedin.com/in/neonpulse"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 flex items-center justify-center bg-purple-500 rounded-full border border-purple-700 text-white"
@@ -179,7 +235,7 @@ export default function Home() {
                 <FaLinkedin className="w-6 h-6" />
               </motion.a>
               <motion.a
-                href="https://github.com/your-profile"
+                href="https://github.com/D-Zoro"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 flex items-center justify-center bg-purple-500 rounded-full border border-purple-700 text-white"
@@ -218,7 +274,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 1.7 }}
             />
             <motion.div
-              className="absolute bottom-0 right-0 w-24 h-24 border-r-2 border-b-2 border-purple-500/30"
+              className="absolute bottom-0 right-0 w-24 h-24 border-r-2 border-b-2 border-purple-500/30 "
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 1.8 }}
