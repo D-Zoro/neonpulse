@@ -9,69 +9,69 @@ import Link from 'next/link';
 const projects = [
 	{
 		id: '01',
-		title: 'Neural Commerce Engine',
+		title: 'Serene-Sphere',
 		description:
-			'AI-powered e-commerce platform with real-time neural network product recommendations and quantum-encrypted payments.',
-		tech: ['React', 'Three.js', 'Node.js', 'TensorFlow', 'Blockchain'],
-		status: 'ACTIVE',
+			'AI-powered platform equiped with personal ai therapist and ai powered assessments and mood tracker with real time analytics.',
+		tech: ['React', 'Tailwindcss', 'Node.js', 'GenAI', 'Express','MongoDB'],
+		status: 'LIVE',
 		type: 'Web Application',
-		github: '#',
-		demo: '#',
+		github: 'https://github.com/D-Zoro/Serene-sphere.git',
+		demo: 'https://serene-sphere-neonpulse.vercel.app/',
 	},
 	{
 		id: '02',
-		title: 'Holographic Data Viz',
+		title: 'Books4All',
 		description:
-			'Advanced 3D data visualization platform using WebGL shaders for real-time analytics in virtual space.',
-		tech: ['WebGL', 'GLSL', 'D3.js', 'WebAssembly', 'Python'],
-		status: 'BETA',
-		type: 'Data Platform',
-		github: '#',
-		demo: '#',
+			'A web application where people can resell or buy used books without any hassle.',
+		tech: ['Nextjs', 'MongoDB', 'tailwindcss', 'Node.js', 'NextAuth'],
+		status: 'LIVE',
+		type: 'Web Application',
+		github: 'https://github.com/D-Zoro/Books4All-remastered.git',
+		demo: 'https://books4all.me',
 	},
 	{
 		id: '03',
-		title: 'Quantum Task Matrix',
+		title: 'PrAIya',
 		description:
-			'Distributed project management system with blockchain verification and AI-assisted workflow optimization.',
-		tech: ['Next.js', 'TypeScript', 'Solidity', 'GraphQL', 'Redis'],
-		status: 'ACTIVE',
-		type: 'Enterprise Tool',
-		github: '#',
+			'AI api powered ai gf(just being considerate about my fellow homies  (^_^) )',
+		tech: ['Shell', 'GenAI', 'API'],
+		status: 'BETA',
+		type: 'Script',
+		github: 'https://github.com/D-Zoro/PrAIya.git',
 		demo: '#',
 	},
 	{
 		id: '04',
-		title: 'Cyber Weather Grid',
+		title: 'AIRO',
 		description:
-			'Real-time atmospheric monitoring system with predictive ML models and immersive 3D weather simulation.',
+			'Real time air pollution prediction using trained ai models based on data set from ground and satellite stations',
 		tech: ['Vue.js', 'Three.js', 'FastAPI', 'TensorFlow', 'WebGL'],
-		status: 'ACTIVE',
-		type: 'IoT Platform',
-		github: '#',
+		status: 'DEVELOPMENT',
+		type: 'AIML Application',
+		github: 'https://github.com/D-Zoro/protoType.git',
 		demo: '#',
 	},
 	{
 		id: '05',
-		title: 'Digital Twin Engine',
+		title: 'Search Engine Result Page',
 		description:
-			'Virtual reality environment creator for digital twin simulations with real-time physics synchronization.',
-		tech: ['Unity', 'C#', 'WebRTC', 'Socket.io', 'AWS'],
-		status: 'DEVELOPMENT',
-		type: 'VR Application',
-		github: '#',
+			'Simple search engine result page implemented using serper api key for processing query',
+		tech: ['Nextjs', 'Tailwindcss', 'API', 'Nodejs'],
+		status: 'BETA',
+		type: 'Web Application',
+		github: 'https://github.com/D-Zoro/next-serp-app.git',
 		demo: null,
 	},
 	{
 		id: '06',
-		title: 'Neon Portfolio Core',
+		title: 'Neonpulse Portfolio Core',
 		description:
 			'This very portfolio - a showcase of advanced web technologies and immersive 3D experiences.',
-		tech: ['Next.js', 'Three.js', 'Framer Motion', 'WebGL', 'GLSL'],
+		tech: ['Next.js', 'Three.js', 'Framer Motion', 'Tailwindcss'],
 		status: 'LIVE',
 		type: 'Portfolio',
-		github: '#',
-		demo: '#',
+		github: 'https://github.com/D-Zoro/next-serp-app.git',
+		demo: '/',
 	},
 ];
 
@@ -86,6 +86,7 @@ function ProjectCard({ project, index }) {
 			transition={{ duration: 0.6, delay: index * 0.1 }}
 			onHoverStart={() => setIsHovered(true)}
 			onHoverEnd={() => setIsHovered(false)}
+			onClick={ () => window.open(project.demo || project.github,'_blank')}
 		>
 			{/* Holographic background */}
 			<div className="absolute inset-0 holographic opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-2xl"></div>
@@ -210,6 +211,7 @@ export default function ProjectsPage() {
 						))}
 					</div>
 				</div>
+				<div className="mt-8 pt-6 border-t border-purple-500/30 grid grid-cols-3 gap-6"></div>
 
 				{/* Stats Panel */}
 				<motion.div
@@ -230,10 +232,10 @@ export default function ProjectsPage() {
 
 						<div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
 							{[
-								{ label: 'Total Projects', value: '50+', metric: 'DEPLOYED' },
-								{ label: 'Code Commits', value: '5.2K', metric: 'PUSHED' },
-								{ label: 'Technologies', value: '25+', metric: 'MASTERED' },
-								{ label: 'Uptime', value: '99.9%', metric: 'AVAILABILITY' },
+								 { label: 'Repos Explored', value: '69+', metric: 'Repos Explored' },
+								 { label: 'Keybinds Burned', value: '1337', metric: 'Keybinds Burned' },
+								 { label: 'Linux Hours', value: '420+', metric: 'Linux Hours' },
+								 { label: 'Sleep Uptime', value: '0%', metric: 'Sleep Time' },
 							].map((stat, index) => (
 								<div key={stat.label}>
 									<div className="cyber-text text-2xl font-bold text-white neon-glow mb-2">
@@ -250,20 +252,25 @@ export default function ProjectsPage() {
 
 				{/* Back Navigation */}
 				<motion.div
-					className="fixed bottom-8 left-8 z-30"
+					className="mb-8 flex justify-start"
 					initial={{ opacity: 0, scale: 0.8 }}
 					animate={{ opacity: 1, scale: 1 }}
 					transition={{ duration: 0.6, delay: 1.2 }}
 				>
 					<Link href="/">
-						<div className="cyber-panel px-6 py-3 cursor-pointer group hover:scale-105 transition-transform duration-300">
-							<span className="cyber-text text-purple-300 group-hover:text-white transition-colors duration-300">
+						<div className="relative cursor-pointer group">
+							<span className="cyber-text text-lg text-purple-300 group-hover:text-purple-100 transition-colors duration-300 font-semibold tracking-wider">
 								← RETURN.HOME
 							</span>
+							{/* Dynamic underline */}
+							<div className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-purple-500 via-purple-300 to-purple-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></div>
+							{/* Glowing dot */}
+							<div className="absolute -left-2 top-1/2 transform -translate-y-1/2 w-1 h-1 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 						</div>
 					</Link>
 				</motion.div>
 			</div>
 		</div>
+		
 	);
 }
