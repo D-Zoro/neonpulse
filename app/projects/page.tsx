@@ -86,7 +86,7 @@ function ProjectCard({ project, index }) {
 			transition={{ duration: 0.6, delay: index * 0.1 }}
 			onHoverStart={() => setIsHovered(true)}
 			onHoverEnd={() => setIsHovered(false)}
-			onClick={ () => window.open(project.demo || project.github,'_blank')}
+			// onClick={ () => window.open(project.demo || project.github,'_blank')}
 		>
 			{/* Holographic background */}
 			<div className="absolute inset-0 holographic opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-2xl"></div>
