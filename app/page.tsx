@@ -239,7 +239,7 @@ export default function Home() {
 
             {/* Faint Light Text */}
             <div className="absolute top-4 left-4 text-xs text-purple-500 opacity-70">
-              portfolio-v.1/D-Zoro
+              portfolio-v.1/Nishanth P Ouseph
             </div>
 
             {/* Social Links */}
