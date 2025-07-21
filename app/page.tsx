@@ -238,7 +238,7 @@ export default function Home() {
             </motion.div>
 
             {/* Faint Light Text */}
-            <div className="absolute top-4 left-4 text-xs text-purple-500 opacity-70">
+            <div className="absolute top-4 left-4 text-xs text-white opacity-70">
               portfolio-v.1/Nishanth P Ouseph
             </div>
 
