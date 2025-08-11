@@ -80,7 +80,7 @@ function ProjectCard({ project, index }) {
 
 	return (
 		<motion.div
-			className="cyber-panel p-6 relative overflow-hidden group cursor-pointer bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl shadow-xl hover:shadow-purple-500/20 transition-all duration-500"
+			className="cyber-panel p-6 relative overflow-hidden group cursor-pointer bg-gradient-to-br from-purple-900/20 via-violet-900/15 to-pink-900/20 backdrop-blur-md border border-purple-500/30 rounded-2xl shadow-xl hover:shadow-purple-500/40 transition-all duration-500"
 			initial={{ opacity: 0, y: 30 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -89,10 +89,10 @@ function ProjectCard({ project, index }) {
 			// onClick={ () => window.open(project.demo || project.github,'_blank')}
 		>
 			{/* Holographic background */}
-			<div className="absolute inset-0 holographic opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-2xl"></div>
+			<div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-violet-500/10 to-pink-500/10 opacity-0 group-hover:opacity-30 transition-opacity duration-500 rounded-2xl"></div>
 
 			{/* Project ID */}
-			<div className="absolute top-4 right-4 cyber-text text-sm text-purple-500 opacity-60">
+			<div className="absolute top-4 right-4 cyber-text text-sm text-purple-400 opacity-60">
 				{project.id}
 			</div>
 
@@ -108,7 +108,7 @@ function ProjectCard({ project, index }) {
 				</div>
 
 				{/* Description */}
-				<p className="text-gray-300 leading-relaxed text-sm">
+				<p className="text-purple-100/80 leading-relaxed text-sm">
 					{project.description}
 				</p>
 
@@ -117,7 +117,7 @@ function ProjectCard({ project, index }) {
 					{project.tech.map((tech, i) => (
 						<span
 							key={i}
-							className="px-2 py-1 text-xs border border-purple-500/30 text-purple-300 hover:border-purple-400 hover:text-white transition-colors duration-200"
+							className="px-2 py-1 text-xs border border-purple-500/40 bg-purple-900/30 text-purple-300 hover:border-purple-400 hover:text-white hover:bg-purple-800/40 transition-all duration-200"
 						>
 							{tech}
 						</span>
@@ -125,15 +125,15 @@ function ProjectCard({ project, index }) {
 				</div>
 
 				{/* Status and Actions */}
-				<div className="flex items-center justify-between pt-4 border-t border-purple-500/20">
+				<div className="flex items-center justify-between pt-4 border-t border-purple-500/30">
 					<div className="flex items-center space-x-2">
 						<div
 							className={`w-2 h-2 rounded-full animate-pulse ${
 								project.status === 'ACTIVE' || project.status === 'LIVE'
-									? 'bg-green-400'
+									? 'bg-purple-400'
 									: project.status === 'BETA'
-									? 'bg-yellow-400'
-									: 'bg-purple-400'
+									? 'bg-violet-400'
+									: 'bg-pink-400'
 							}`}
 						></div>
 						<span className="cyber-text text-xs text-purple-400">
@@ -144,14 +144,14 @@ function ProjectCard({ project, index }) {
 					<div className="flex space-x-3">
 						<a
 							href={project.github}
-							className="cyber-text text-xs text-purple-400 hover:text-white transition-colors duration-200"
+							className="cyber-text text-xs text-purple-400 hover:text-purple-200 transition-colors duration-200"
 						>
 							SOURCE
 						</a>
 						{project.demo && (
 							<a
 								href={project.demo}
-								className="cyber-text text-xs text-purple-400 hover:text-white transition-colors duration-200"
+								className="cyber-text text-xs text-purple-400 hover:text-purple-200 transition-colors duration-200"
 							>
 								DEMO
 							</a>
@@ -162,7 +162,7 @@ function ProjectCard({ project, index }) {
 
 			{/* Hover effect line */}
 			<div
-				className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-purple-500 to-purple-300 transition-all duration-500 ${
+				className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-purple-500 via-violet-400 to-pink-500 transition-all duration-500 ${
 					isHovered ? 'w-full' : 'w-0'
 				}`}
 			></div>
@@ -252,7 +252,7 @@ export default function ProjectsPage() {
 
 				{/* Back Navigation */}
 				<motion.div
-					className="mb-8 flex justify-start"
+					className="mb-8 sm:mb-12 flex justify-center"
 					initial={{ opacity: 0, scale: 0.8 }}
 					animate={{ opacity: 1, scale: 1 }}
 					transition={{ duration: 0.6, delay: 1.2 }}
@@ -263,7 +263,7 @@ export default function ProjectsPage() {
 								← RETURN.HOME
 							</span>
 							{/* Dynamic underline */}
-							<div className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-purple-500 via-purple-300 to-purple-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></div>
+							<div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500 via-purple-300 to-purple-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></div>
 							{/* Glowing dot */}
 							<div className="absolute -left-2 top-1/2 transform -translate-y-1/2 w-1 h-1 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 						</div>

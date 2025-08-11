@@ -5,6 +5,19 @@ import { Canvas } from '@react-three/fiber';
 import { Suspense } from 'react';
 import CyberScene from '@/components/CyberScene';
 import Link from 'next/link';
+import {
+  SiReact, SiNextdotjs, SiTailwindcss, SiMongodb,
+  SiMariadb, SiPostgresql, SiMysql, SiExpress, SiFastapi,
+  SiJsonwebtokens, SiAuth0, SiDocker, SiVercel, SiRender,
+  SiAmazon, SiGithub, SiTensorflow, SiGoogleearthengine,
+  SiLangchain, SiArchlinux, SiHashicorp, SiLinux,
+  SiPython, SiC, SiCplusplus, SiJavascript,
+  SiTypescript, SiHtml5, SiCss3, SiGnubash, SiGit
+} from 'react-icons/si';
+
+import {
+  FaJava, FaWifi, FaRobot, FaProjectDiagram, FaNetworkWired
+} from 'react-icons/fa';
 
 const skills = [
 	{ name: 'Frontend Development (React, Tailwind)', level: 60, category: 'Web Technologies' },
@@ -36,25 +49,25 @@ export default function AboutPage() {
 			<div className="absolute inset-0 scan-lines opacity-20"></div>
 
 			{/* Content */}
-			<div className="relative z-10 p-8 overflow-y-auto h-screen">
+			<div className="relative z-10 p-4 sm:p-6 lg:p-8 overflow-y-auto h-screen">
 				{/* Header */}
 				<motion.div
-					className="text-center mb-16 pt-20"
+					className="text-center mb-8 sm:mb-12 lg:mb-16 pt-16 sm:pt-20"
 					initial={{ opacity: 0, y: 30 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.8 }}
 				>
-					<h1 className="cyber-text text-5xl md:text-7xl font-bold text-white neon-glow mb-6">
+					<h1 className="cyber-text text-3xl sm:text-5xl md:text-7xl font-bold text-white neon-glow mb-4 sm:mb-6">
 						ABOUT.EXE
 					</h1>
-					<div className="w-32 h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent mx-auto"></div>
+					<div className="w-24 sm:w-32 h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent mx-auto"></div>
 				</motion.div>
 
 				{/* Main Content Grid */}
-				<div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 mb-20">
+				<div className="max-w-7xl mx-auto space-y-8 sm:space-y-12 mb-8 sm:mb-16 lg:mb-20">
 					{/* Bio Section */}
 					<motion.div
-						className="cyber-panel p-8 relative overflow-hidden"
+						className="cyber-panel p-4 sm:p-6 lg:p-8 relative overflow-hidden"
 						initial={{ opacity: 0, x: -50 }}
 						animate={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.8, delay: 0.2 }}
@@ -109,83 +122,452 @@ export default function AboutPage() {
 						</div>
 					</motion.div>
 
-					{/* Known Languages Section */}
+					{/* Tools & Technologies Section */}
 					<motion.div
-						className="cyber-panel p-8 relative overflow-hidden"
-						initial={{ opacity: 0, x: 50 }}
-						animate={{ opacity: 1, x: 0 }}
+						className="relative overflow-hidden"
+						initial={{ opacity: 0, y: 50 }}
+						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.8, delay: 0.4 }}
 					>
-						<div className="holographic absolute inset-0 opacity-10"></div>
-
-						<div className="relative z-10">
-							<div className="flex items-center mb-6">
+						{/* Enhanced Background */}
+						<div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-gray-900/40 to-black/60 backdrop-blur-xl border border-purple-500/30 rounded-2xl"></div>
+						<div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(147,51,234,0.1),transparent_70%)]"></div>
+						<div className="holographic absolute inset-0 opacity-5"></div>
+						
+						{/* Content */}
+						<div className="relative z-10 p-4 sm:p-6 lg:p-8">
+							<div className="flex items-center justify-center mb-8 sm:mb-12">
 								<div className="w-2 h-2 bg-purple-500 mr-4 animate-pulse"></div>
-								<h2 className="cyber-text text-2xl font-bold text-purple-300">
-									LANGUAGE.ARSENAL
+								<h2 className="cyber-text text-xl sm:text-2xl font-bold text-purple-300">
+									TOOLS.&.TECHNOLOGIES
 								</h2>
 							</div>
 
-							<div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-								{[
-									{ name: 'Python', icon: '🐍', color: 'text-yellow-400', bg: 'bg-yellow-400/20' },
-									{ name: 'C', icon: 'C', color: 'text-blue-400', bg: 'bg-blue-400/20' },
-									{ name: 'C++', icon: 'C++', color: 'text-blue-500', bg: 'bg-blue-500/20' },
-									{ name: 'Java', icon: '☕', color: 'text-orange-500', bg: 'bg-orange-500/20' },
-									{ name: 'JavaScript', icon: 'JS', color: 'text-yellow-300', bg: 'bg-yellow-300/20' },
-									{ name: 'TypeScript', icon: 'TS', color: 'text-blue-400', bg: 'bg-blue-400/20' },
-									{ name: 'HTML', icon: 'HTML', color: 'text-orange-400', bg: 'bg-orange-400/20' },
-									{ name: 'CSS', icon: 'CSS', color: 'text-blue-300', bg: 'bg-blue-300/20' },
-									{ name: 'Shell', icon: '$', color: 'text-green-400', bg: 'bg-green-400/20' },
-								].map((lang, index) => (
-									<motion.div
-										key={lang.name}
-										className="cyber-panel p-3 text-center group cursor-pointer relative overflow-hidden"
-										initial={{ opacity: 0, scale: 0.8 }}
-										animate={{ opacity: 1, scale: 1 }}
-										transition={{
-											duration: 0.5,
-											delay: 0.6 + index * 0.1,
-										}}
-										whileHover={{ 
-											scale: 1.1,
-											y: -5,
-											boxShadow: `0 0 15px ${lang.color.includes('yellow') ? '#facc15' : lang.color.includes('blue') ? '#60a5fa' : lang.color.includes('orange') ? '#fb923c' : '#4ade80'}33`
-										}}
+							{/* Main Grid Layout */}
+							<div className="max-w-6xl mx-auto space-y-8 sm:space-y-12">
+								{/* Languages Section */}
+								<div>
+									<motion.div 
+										className="cyber-text text-base sm:text-lg text-purple-400 mb-6 sm:mb-8 flex items-center justify-center"
+										initial={{ opacity: 0, y: -10 }}
+										animate={{ opacity: 1, y: 0 }}
+										transition={{ duration: 0.6, delay: 0.5 }}
 									>
-										<div className={`absolute inset-0 ${lang.bg} opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg`}></div>
-										<div className="holographic absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
-										
-										<div className="relative z-10">
-											<motion.div 
-												className={`text-2xl mb-2 ${lang.color}`}
+										<div className="w-1 h-1 bg-purple-400 mr-3 animate-pulse"></div>
+										Programming Languages
+										<div className="w-1 h-1 bg-purple-400 ml-3 animate-pulse"></div>
+									</motion.div>
+									<div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-9 gap-3 sm:gap-4 lg:gap-6 place-items-center max-w-5xl mx-auto">
+										{[
+											{ name: 'Python', icon: <SiPython className="w-8 h-8 sm:w-10 sm:h-10" />, color: 'text-yellow-400', bg: 'bg-yellow-400/10' },
+											{ name: 'C', icon: <SiC className="w-8 h-8 sm:w-10 sm:h-10" />, color: 'text-blue-400', bg: 'bg-blue-400/10' },
+											{ name: 'C++', icon: <SiCplusplus className="w-8 h-8 sm:w-10 sm:h-10" />, color: 'text-blue-500', bg: 'bg-blue-500/10' },
+											{ name: 'Java', icon: <FaJava className="w-8 h-8 sm:w-10 sm:h-10" />, color: 'text-orange-500', bg: 'bg-orange-500/10' },
+											{ name: 'JavaScript', icon: <SiJavascript className="w-8 h-8 sm:w-10 sm:h-10" />, color: 'text-yellow-300', bg: 'bg-yellow-300/10' },
+											{ name: 'TypeScript', icon: <SiTypescript className="w-8 h-8 sm:w-10 sm:h-10" />, color: 'text-blue-400', bg: 'bg-blue-400/10' },
+											{ name: 'HTML', icon: <SiHtml5 className="w-8 h-8 sm:w-10 sm:h-10" />, color: 'text-orange-400', bg: 'bg-orange-400/10' },
+											{ name: 'CSS', icon: <SiCss3 className="w-8 h-8 sm:w-10 sm:h-10" />, color: 'text-blue-300', bg: 'bg-blue-300/10' },
+											{ name: 'Shell', icon: <SiGnubash className="w-8 h-8 sm:w-10 sm:h-10" />, color: 'text-green-400', bg: 'bg-green-400/10' },
+										].map((lang, index) => (
+											<motion.div
+												key={lang.name}
+												className="group cursor-pointer relative"
+												initial={{ opacity: 0, scale: 0.8, y: 20 }}
+												animate={{ opacity: 1, scale: 1, y: 0 }}
+												transition={{
+													duration: 0.6,
+													delay: 0.6 + index * 0.05,
+													ease: "easeOut"
+												}}
 												whileHover={{ 
-													scale: 1.2,
-													rotate: [0, -10, 10, -5, 5, 0],
-													transition: { duration: 0.5 }
+													scale: 1.1,
+													y: -5,
+													transition: { duration: 0.3 }
 												}}
 											>
-												{lang.icon}
+												<div className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl backdrop-blur-sm bg-gray-900/40 border border-purple-500/20 group-hover:border-purple-400/60 transition-all duration-300 flex flex-col items-center justify-center relative overflow-hidden shadow-lg group-hover:shadow-purple-500/20">
+													<div className={`absolute inset-0 ${lang.bg} opacity-0 group-hover:opacity-80 transition-all duration-300 rounded-xl`}></div>
+													
+													<motion.div 
+														className={`mb-1 ${lang.color} relative z-10`}
+														whileHover={{ 
+															scale: 1.1,
+															transition: { duration: 0.2 }
+														}}
+													>
+														{lang.icon}
+													</motion.div>
+													
+													<div className="cyber-text text-xs text-purple-300 group-hover:text-white transition-colors duration-300 font-medium text-center relative z-10">
+														{lang.name}
+													</div>
+												</div>
 											</motion.div>
-											<div className="cyber-text text-xs text-purple-300 group-hover:text-white transition-colors duration-300 font-semibold">
-												{lang.name}
-											</div>
+										))}
+									</div>
+								</div>
+
+								{/* Technology Categories Grid */}
+								<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
+									{/* Frontend */}
+									<div className="bg-gradient-to-br from-purple-900/20 to-violet-800/10 p-4 sm:p-6 rounded-xl border border-purple-500/20 backdrop-blur-sm">
+										<motion.div 
+											className="cyber-text text-base sm:text-lg text-purple-400 mb-4 sm:mb-6 flex items-center justify-center"
+											initial={{ opacity: 0, y: -10 }}
+											animate={{ opacity: 1, y: 0 }}
+											transition={{ duration: 0.6, delay: 1.0 }}
+										>
+											<div className="w-1 h-1 bg-purple-400 mr-3 animate-pulse"></div>
+											Frontend
+											<div className="w-1 h-1 bg-purple-400 ml-3 animate-pulse"></div>
+										</motion.div>
+										<div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-1 lg:grid-cols-3 gap-3 sm:gap-4">
+											{[
+												{ name: 'React.js', icon: <SiReact className="w-10 h-10" />, color: 'text-cyan-400', bg: 'bg-cyan-400/10' },
+												{ name: 'Next.js', icon: <SiNextdotjs className="w-10 h-10" />, color: 'text-white', bg: 'bg-gray-200/10' },
+												{ name: 'Tailwind CSS', icon: <SiTailwindcss className="w-10 h-10" />, color: 'text-sky-400', bg: 'bg-sky-400/10' },
+											].map((tool, index) => (
+												<motion.div
+													key={tool.name}
+													className="group cursor-pointer relative"
+													initial={{ opacity: 0, scale: 0.8, y: 20 }}
+													animate={{ opacity: 1, scale: 1, y: 0 }}
+													transition={{
+														duration: 0.6,
+														delay: 1.1 + index * 0.1,
+														ease: "easeOut"
+													}}
+													whileHover={{ 
+														scale: 1.05,
+														y: -5,
+														transition: { duration: 0.3 }
+													}}
+												>
+													<div className="h-24 rounded-lg backdrop-blur-sm bg-gray-900/40 border border-purple-500/20 group-hover:border-purple-400/60 transition-all duration-300 flex flex-col items-center justify-center relative overflow-hidden shadow-lg group-hover:shadow-purple-500/20">
+														<div className={`absolute inset-0 ${tool.bg} opacity-0 group-hover:opacity-80 transition-all duration-300 rounded-lg`}></div>
+														
+														<motion.div 
+															className={`mb-2 ${tool.color} relative z-10`}
+															whileHover={{ 
+																scale: 1.1,
+																transition: { duration: 0.2 }
+															}}
+														>
+															{tool.icon}
+														</motion.div>
+														
+														<div className="cyber-text text-xs text-purple-300 group-hover:text-white transition-colors duration-300 font-medium text-center relative z-10">
+															{tool.name}
+														</div>
+													</div>
+												</motion.div>
+											))}
 										</div>
-									</motion.div>
-								))}
+									</div>
+
+									{/* Database */}
+									<div className="bg-gradient-to-br from-violet-900/20 to-purple-800/10 p-4 sm:p-6 rounded-xl border border-violet-500/20 backdrop-blur-sm">
+										<motion.div 
+											className="cyber-text text-base sm:text-lg text-violet-400 mb-4 sm:mb-6 flex items-center justify-center"
+											initial={{ opacity: 0, y: -10 }}
+											animate={{ opacity: 1, y: 0 }}
+											transition={{ duration: 0.6, delay: 1.4 }}
+										>
+											<div className="w-1 h-1 bg-violet-400 mr-3 animate-pulse"></div>
+											Database
+											<div className="w-1 h-1 bg-violet-400 ml-3 animate-pulse"></div>
+										</motion.div>
+										<div className="grid grid-cols-2 gap-3 sm:gap-4">
+											{[
+												{ name: 'MongoDB', icon: <SiMongodb className="w-8 h-8" />, color: 'text-green-400', bg: 'bg-green-400/10' },
+												{ name: 'MariaDB', icon: <SiMariadb className="w-8 h-8" />, color: 'text-blue-400', bg: 'bg-blue-400/10' },
+												{ name: 'PostgreSQL', icon: <SiPostgresql className="w-8 h-8" />, color: 'text-blue-500', bg: 'bg-blue-500/10' },
+												{ name: 'MySQL', icon: <SiMysql className="w-8 h-8" />, color: 'text-blue-300', bg: 'bg-blue-300/10' },
+											].map((tool, index) => (
+												<motion.div
+													key={tool.name}
+													className="group cursor-pointer relative"
+													initial={{ opacity: 0, scale: 0.8, y: 20 }}
+													animate={{ opacity: 1, scale: 1, y: 0 }}
+													transition={{
+														duration: 0.6,
+														delay: 1.5 + index * 0.1,
+														ease: "easeOut"
+													}}
+													whileHover={{ 
+														scale: 1.05,
+														y: -5,
+														transition: { duration: 0.3 }
+													}}
+												>
+													<div className="h-20 rounded-lg backdrop-blur-sm bg-gray-900/40 border border-violet-500/20 group-hover:border-violet-400/60 transition-all duration-300 flex flex-col items-center justify-center relative overflow-hidden shadow-lg group-hover:shadow-violet-500/20">
+														<div className={`absolute inset-0 ${tool.bg} opacity-0 group-hover:opacity-80 transition-all duration-300 rounded-lg`}></div>
+														
+														<motion.div 
+															className={`mb-1 ${tool.color} relative z-10`}
+															whileHover={{ 
+																scale: 1.1,
+																transition: { duration: 0.2 }
+															}}
+														>
+															{tool.icon}
+														</motion.div>
+														
+														<div className="cyber-text text-xs text-purple-300 group-hover:text-white transition-colors duration-300 font-medium text-center relative z-10">
+															{tool.name}
+														</div>
+													</div>
+												</motion.div>
+											))}
+										</div>
+									</div>
+
+									{/* Backend & Auth */}
+									<div className="bg-gradient-to-br from-pink-900/20 to-purple-800/10 p-4 sm:p-6 rounded-xl border border-pink-500/20 backdrop-blur-sm">
+										<motion.div 
+											className="cyber-text text-base sm:text-lg text-pink-400 mb-4 sm:mb-6 flex items-center justify-center"
+											initial={{ opacity: 0, y: -10 }}
+											animate={{ opacity: 1, y: 0 }}
+											transition={{ duration: 0.6, delay: 1.9 }}
+										>
+											<div className="w-1 h-1 bg-pink-400 mr-3 animate-pulse"></div>
+											Backend & Auth
+											<div className="w-1 h-1 bg-pink-400 ml-3 animate-pulse"></div>
+										</motion.div>
+										<div className="grid grid-cols-2 gap-3 sm:gap-4">
+											{[
+												{ name: 'Express.js', icon: <SiExpress className="w-8 h-8" />, color: 'text-gray-400', bg: 'bg-gray-400/10' },
+												{ name: 'FastAPI', icon: <SiFastapi className="w-8 h-8" />, color: 'text-green-300', bg: 'bg-green-300/10' },
+												{ name: 'JWT Auth', icon: <SiJsonwebtokens className="w-8 h-8" />, color: 'text-yellow-400', bg: 'bg-yellow-400/10' },
+												{ name: 'NextAuth.js', icon: <SiAuth0 className="w-8 h-8" />, color: 'text-purple-400', bg: 'bg-purple-400/10' },
+											].map((tool, index) => (
+												<motion.div
+													key={tool.name}
+													className="group cursor-pointer relative"
+													initial={{ opacity: 0, scale: 0.8, y: 20 }}
+													animate={{ opacity: 1, scale: 1, y: 0 }}
+													transition={{
+														duration: 0.6,
+														delay: 2.0 + index * 0.1,
+														ease: "easeOut"
+													}}
+													whileHover={{ 
+														scale: 1.05,
+														y: -5,
+														transition: { duration: 0.3 }
+													}}
+												>
+													<div className="h-20 rounded-lg backdrop-blur-sm bg-gray-900/40 border border-pink-500/20 group-hover:border-pink-400/60 transition-all duration-300 flex flex-col items-center justify-center relative overflow-hidden shadow-lg group-hover:shadow-pink-500/20">
+														<div className={`absolute inset-0 ${tool.bg} opacity-0 group-hover:opacity-80 transition-all duration-300 rounded-lg`}></div>
+														
+														<motion.div 
+															className={`mb-1 ${tool.color} relative z-10`}
+															whileHover={{ 
+																scale: 1.1,
+																transition: { duration: 0.2 }
+															}}
+														>
+															{tool.icon}
+														</motion.div>
+														
+														<div className="cyber-text text-xs text-purple-300 group-hover:text-white transition-colors duration-300 font-medium text-center relative z-10">
+															{tool.name}
+														</div>
+													</div>
+												</motion.div>
+											))}
+										</div>
+									</div>
+
+									{/* DevOps & Cloud */}
+									<div className="bg-gradient-to-br from-purple-900/20 to-pink-800/10 p-4 sm:p-6 rounded-xl border border-purple-500/20 backdrop-blur-sm">
+										<motion.div 
+											className="cyber-text text-base sm:text-lg text-purple-400 mb-4 sm:mb-6 flex items-center justify-center"
+											initial={{ opacity: 0, y: -10 }}
+											animate={{ opacity: 1, y: 0 }}
+											transition={{ duration: 0.6, delay: 2.4 }}
+										>
+											<div className="w-1 h-1 bg-purple-400 mr-3 animate-pulse"></div>
+											DevOps & Cloud
+											<div className="w-1 h-1 bg-purple-400 ml-3 animate-pulse"></div>
+										</motion.div>
+										<div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4">
+											{[
+												{ name: 'Docker', icon: <SiDocker className="w-8 h-8" />, color: 'text-sky-400', bg: 'bg-sky-400/10' },
+												{ name: 'Vercel', icon: <SiVercel className="w-8 h-8" />, color: 'text-white', bg: 'bg-gray-200/10' },
+												{ name: 'Render', icon: <SiRender className="w-8 h-8" />, color: 'text-blue-400', bg: 'bg-blue-400/10' },
+												{ name: 'AWS', icon: <SiAmazon className="w-8 h-8" />, color: 'text-yellow-400', bg: 'bg-yellow-400/10' },
+												{ name: 'Git', icon: <SiGit className="w-8 h-8" />, color: 'text-red-400', bg: 'bg-red-400/10' },
+												{ name: 'GitHub', icon: <SiGithub className="w-8 h-8" />, color: 'text-gray-300', bg: 'bg-gray-300/10' },
+											].map((tool, index) => (
+												<motion.div
+													key={tool.name}
+													className="group cursor-pointer relative"
+													initial={{ opacity: 0, scale: 0.8, y: 20 }}
+													animate={{ opacity: 1, scale: 1, y: 0 }}
+													transition={{
+														duration: 0.6,
+														delay: 2.5 + index * 0.1,
+														ease: "easeOut"
+													}}
+													whileHover={{ 
+														scale: 1.05,
+														y: -5,
+														transition: { duration: 0.3 }
+													}}
+												>
+													<div className="h-20 rounded-lg backdrop-blur-sm bg-gray-900/40 border border-purple-500/20 group-hover:border-purple-400/60 transition-all duration-300 flex flex-col items-center justify-center relative overflow-hidden shadow-lg group-hover:shadow-purple-500/20">
+														<div className={`absolute inset-0 ${tool.bg} opacity-0 group-hover:opacity-80 transition-all duration-300 rounded-lg`}></div>
+														
+														<motion.div 
+															className={`mb-1 ${tool.color} relative z-10`}
+															whileHover={{ 
+																scale: 1.1,
+																transition: { duration: 0.2 }
+															}}
+														>
+															{tool.icon}
+														</motion.div>
+														
+														<div className="cyber-text text-xs text-purple-300 group-hover:text-white transition-colors duration-300 font-medium text-center relative z-10">
+															{tool.name}
+														</div>
+													</div>
+												</motion.div>
+											))}
+										</div>
+									</div>
+
+									{/* AI/ML */}
+									<div className="bg-gradient-to-br from-violet-900/20 to-pink-800/10 p-4 sm:p-6 rounded-xl border border-violet-500/20 backdrop-blur-sm">
+										<motion.div 
+											className="cyber-text text-base sm:text-lg text-violet-400 mb-4 sm:mb-6 flex items-center justify-center"
+											initial={{ opacity: 0, y: -10 }}
+											animate={{ opacity: 1, y: 0 }}
+											transition={{ duration: 0.6, delay: 3.0 }}
+										>
+											<div className="w-1 h-1 bg-violet-400 mr-3 animate-pulse"></div>
+											AI/ML
+											<div className="w-1 h-1 bg-violet-400 ml-3 animate-pulse"></div>
+										</motion.div>
+										<div className="grid grid-cols-2 gap-3 sm:gap-4">
+											{[
+												{ name: 'TensorFlow', icon: <SiTensorflow className="w-8 h-8" />, color: 'text-orange-400', bg: 'bg-orange-400/10' },
+												{ name: 'Earth Engine', icon: <SiGoogleearthengine className="w-8 h-8" />, color: 'text-green-400', bg: 'bg-green-400/10' },
+												{ name: 'LangChain', icon: <SiLangchain className="w-8 h-8" />, color: 'text-blue-400', bg: 'bg-blue-400/10' },
+												{ name: 'Vector DB', icon: <FaProjectDiagram className="w-8 h-8" />, color: 'text-purple-400', bg: 'bg-purple-400/10' },
+												{ name: 'MCP', icon: <FaRobot className="w-8 h-8" />, color: 'text-pink-400', bg: 'bg-pink-400/10' },
+											].map((tool, index) => (
+												<motion.div
+													key={tool.name}
+													className="group cursor-pointer relative"
+													initial={{ opacity: 0, scale: 0.8, y: 20 }}
+													animate={{ opacity: 1, scale: 1, y: 0 }}
+													transition={{
+														duration: 0.6,
+														delay: 3.1 + index * 0.1,
+														ease: "easeOut"
+													}}
+													whileHover={{ 
+														scale: 1.05,
+														y: -5,
+														transition: { duration: 0.3 }
+													}}
+												>
+													<div className="h-20 rounded-lg backdrop-blur-sm bg-gray-900/40 border border-violet-500/20 group-hover:border-violet-400/60 transition-all duration-300 flex flex-col items-center justify-center relative overflow-hidden shadow-lg group-hover:shadow-violet-500/20">
+														<div className={`absolute inset-0 ${tool.bg} opacity-0 group-hover:opacity-80 transition-all duration-300 rounded-lg`}></div>
+														
+														<motion.div 
+															className={`mb-1 ${tool.color} relative z-10`}
+															whileHover={{ 
+																scale: 1.1,
+																transition: { duration: 0.2 }
+															}}
+														>
+															{tool.icon}
+														</motion.div>
+														
+														<div className="cyber-text text-xs text-purple-300 group-hover:text-white transition-colors duration-300 font-medium text-center relative z-10">
+															{tool.name}
+														</div>
+													</div>
+												</motion.div>
+											))}
+										</div>
+									</div>
+
+									{/* Security */}
+									<div className="bg-gradient-to-br from-pink-900/20 to-violet-800/10 p-4 sm:p-6 rounded-xl border border-pink-500/20 backdrop-blur-sm">
+										<motion.div 
+											className="cyber-text text-base sm:text-lg text-pink-400 mb-4 sm:mb-6 flex items-center justify-center"
+											initial={{ opacity: 0, y: -10 }}
+											animate={{ opacity: 1, y: 0 }}
+											transition={{ duration: 0.6, delay: 3.5 }}
+										>
+											<div className="w-1 h-1 bg-pink-400 mr-3 animate-pulse"></div>
+											Security
+											<div className="w-1 h-1 bg-pink-400 ml-3 animate-pulse"></div>
+										</motion.div>
+										<div className="grid grid-cols-2 gap-3 sm:gap-4">
+											{[
+												{ name: 'Arch Linux', icon: <SiArchlinux className="w-8 h-8" />, color: 'text-blue-400', bg: 'bg-blue-400/10' },
+												{ name: 'BlackArch', icon: <SiLinux className="w-8 h-8" />, color: 'text-red-400', bg: 'bg-red-400/10' },
+												{ name: 'Airgeddon', icon: <FaProjectDiagram className="w-8 h-8" />, color: 'text-green-400', bg: 'bg-green-400/10' },
+												{ name: 'Aircrack-ng', icon: <FaWifi className="w-8 h-8" />, color: 'text-green-300', bg: 'bg-green-300/10' },
+												{ name: 'Hashcat', icon: <SiHashicorp className="w-8 h-8" />, color: 'text-yellow-400', bg: 'bg-yellow-400/10' },
+												{ name: 'Nmap', icon: <FaNetworkWired className="w-8 h-8" />, color: 'text-blue-300', bg: 'bg-blue-300/10' },
+											].map((tool, index) => (
+												<motion.div
+													key={tool.name}
+													className="group cursor-pointer relative"
+													initial={{ opacity: 0, scale: 0.8, y: 20 }}
+													animate={{ opacity: 1, scale: 1, y: 0 }}
+													transition={{
+														duration: 0.6,
+														delay: 3.6 + index * 0.1,
+														ease: "easeOut"
+													}}
+													whileHover={{ 
+														scale: 1.05,
+														y: -5,
+														transition: { duration: 0.3 }
+													}}
+												>
+													<div className="h-20 rounded-lg backdrop-blur-sm bg-gray-900/40 border border-pink-500/20 group-hover:border-pink-400/60 transition-all duration-300 flex flex-col items-center justify-center relative overflow-hidden shadow-lg group-hover:shadow-pink-500/20">
+														<div className={`absolute inset-0 ${tool.bg} opacity-0 group-hover:opacity-80 transition-all duration-300 rounded-lg`}></div>
+														
+														<motion.div 
+															className={`mb-1 ${tool.color} relative z-10`}
+															whileHover={{ 
+																scale: 1.1,
+																transition: { duration: 0.2 }
+															}}
+														>
+															{tool.icon}
+														</motion.div>
+														
+														<div className="cyber-text text-xs text-purple-300 group-hover:text-white transition-colors duration-300 font-medium text-center relative z-10">
+															{tool.name}
+														</div>
+													</div>
+												</motion.div>
+											))}
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</motion.div>
 				</div>
-				<div className="mt-8 pt-6 border-t border-purple-500/30 grid grid-cols-3 gap-6"></div>
+
 				{/* Skills Matrix */}
 				<motion.div
-					className="max-w-7xl mx-auto mb-16"
+					className="max-w-7xl mx-auto mb-8 sm:mb-12 lg:mb-16"
 					initial={{ opacity: 0, y: 50 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.8, delay: 0.8 }}
 				>
-					<div className="cyber-panel p-8 relative overflow-hidden">
+					<div className="cyber-panel p-4 sm:p-6 lg:p-8 relative overflow-hidden">
 						<div className="holographic absolute inset-0 opacity-10"></div>
 
 						<div className="relative z-10">
@@ -245,7 +627,7 @@ export default function AboutPage() {
 
 				{/* Back Navigation */}
 				<motion.div
-					className="mb-8 flex justify-start"
+					className="mb-8 sm:mb-12 flex justify-center"
 					initial={{ opacity: 0, scale: 0.8 }}
 					animate={{ opacity: 1, scale: 1 }}
 					transition={{ duration: 0.6, delay: 1.2 }}
@@ -256,7 +638,7 @@ export default function AboutPage() {
 								← RETURN.HOME
 							</span>
 							{/* Dynamic underline */}
-							<div className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-purple-500 via-purple-300 to-purple-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></div>
+							<div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500 via-purple-300 to-purple-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></div>
 							{/* Glowing dot */}
 							<div className="absolute -left-2 top-1/2 transform -translate-y-1/2 w-1 h-1 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 						</div>
