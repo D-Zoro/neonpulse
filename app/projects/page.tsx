@@ -58,7 +58,7 @@ const projects = [
 			'Simple search engine result page implemented using serper api key for processing query',
 		tech: ['Nextjs', 'Tailwindcss', 'API', 'Nodejs'],
 		status: 'BETA',
-		type: 'Web Application',
+		type: 'FINISHED',
 		github: 'https://github.com/D-Zoro/next-serp-app.git',
 		demo: null,
 	},
@@ -130,9 +130,11 @@ function ProjectCard({ project, index }) {
 						<div
 							className={`w-2 h-2 rounded-full animate-pulse ${
 								project.status === 'ACTIVE' || project.status === 'LIVE'
-									? 'bg-purple-400'
-									: project.status === 'BETA'
+									? 'bg-green-500'
+									: project.status === 'FINISHED'
 									? 'bg-violet-400'
+									: project.status === 'DEVELOPMENT'
+									? 'bg-yellow-200'
 									: 'bg-pink-400'
 							}`}
 						></div>

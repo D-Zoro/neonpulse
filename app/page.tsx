@@ -42,7 +42,7 @@ export default function Home() {
   return (
     <div className="relative w-full h-screen overflow-hidden bg-cyber-dark">
       {/* Loading Screen */}
-      {/* <AnimatePresence>
+      <AnimatePresence>
         {isLoading && (
           <motion.div
             className="fixed inset-0 z-50 bg-cyber-dark"
@@ -52,7 +52,7 @@ export default function Home() {
             <CyberLoader />
           </motion.div>
         )}
-      </AnimatePresence> */}
+      </AnimatePresence>
 
       {/* 3D Scene */}
       <div className="absolute inset-0">
