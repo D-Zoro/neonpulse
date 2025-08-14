@@ -193,7 +193,7 @@ export default function ContactPage() {
                   </div>
                   
                   <a
-                    href="https://wa.me/919746494606"
+                    href="https://wa.me/919986742167"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group flex items-center space-x-4 p-4 lg:p-6 bg-green-900/20 border border-green-500/30 rounded-xl hover:border-green-400/60 hover:bg-green-800/30 transition-all duration-300"
