@@ -138,7 +138,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <div className="cyber-text text-xs text-purple-400 mb-1">EMAIL.PROTOCOL</div>
-                        <div className="text-white font-light text-sm lg:text-base break-all">nishanthpouseph@gmail.com</div>
+                        <div className="text-white font-light text-sm lg:text-base break-all">nishu142k@gmail.com</div>
                       </div>
                     </div>
                     
@@ -148,7 +148,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <div className="cyber-text text-xs text-purple-400 mb-1">PHONE.LINE</div>
-                        <div className="text-white font-light text-sm lg:text-base">+91 9746494606</div>
+                        <div className="text-white font-light text-sm lg:text-base">+91 9986742167</div>
                       </div>
                     </div>
                     
@@ -206,7 +206,7 @@ export default function ContactPage() {
                         INSTANT.MESSAGE
                       </div>
                       <div className="text-green-400 text-xs lg:text-sm font-light">Click to open WhatsApp</div>
-                      <div className="text-green-500 text-xs font-light">+91 9746494606</div>
+                      <div className="text-green-500 text-xs font-light">+91 9986742167</div>
                     </div>
                   </a>
                 </div>
@@ -470,7 +470,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <div className="cyber-text text-xs text-purple-400 mb-1">EMAIL.PROTOCOL</div>
-                      <div className="text-white font-light text-sm sm:text-base break-all">nishu142k@gmail.com@gmail.com</div>
+                      <div className="text-white font-light text-sm sm:text-base break-all">nishu142k@gmail.com</div>
                     </div>
                   </div>
                   
