@@ -9,17 +9,40 @@ import Link from 'next/link';
 const projects = [
 	{
 		id: '01',
+		title: 'RAG-BOT',
+		description:
+			'Retrieval-Augmented Generation chatbot with persistent memory, dynamic knowledge updates, and document ingestion.',
+		tech: ['OpenAI', 'LangChain', 'LangGraph', 'FastAPI', 'VectorDB','Streamlit'],
+		status: 'BETA',
+		type: 'GEN AI / LLM application',
+		github: 'https://github.com/D-Zoro/Serene-sphere.git',
+		demo: 'https://serene-sphere-neonpulse.vercel.app/',
+	},
+
+	{
+		id: '03',
 		title: 'Serene-Sphere',
 		description:
 			'AI-powered platform equiped with personal ai therapist and ai powered assessments and mood tracker with real time analytics.',
 		tech: ['React', 'Tailwindcss', 'Node.js', 'GenAI', 'Express','MongoDB'],
 		status: 'LIVE',
-		type: 'Web Application',
-		github: 'https://github.com/D-Zoro/Serene-sphere.git',
-		demo: 'https://serene-sphere-neonpulse.vercel.app/',
+		type: 'Full Stack',
+		github: 'https://github.com/D-Zoro/rag-bot.git',
+		demo: null,
 	},
 	{
-		id: '02',
+		id: '04',
+		title: 'MCP-weather',
+		description:
+			'Implemented custom MCP server using FastMCP and NVIDIA AI API for scalable AI tool orchestration (Weather-bot).',
+		tech: ['FastMCP', 'NVIDIA AI API', 'Node.js', 'OpenWeather'],
+		status: '',
+		type: 'FINISHED',
+		github: 'https://github.com/D-Zoro/mcp-weather.git',
+		demo: null,
+	},
+	{
+		id: '05',
 		title: 'Books4All',
 		description:
 			'A web application where people can resell or buy used books without any hassle.',
@@ -30,7 +53,7 @@ const projects = [
 		demo: 'https://books4all.me',
 	},
 	{
-		id: '03',
+		id: '06',
 		title: 'PrAIya',
 		description:
 			'AI api powered ai gf(just being considerate about my fellow homies  (^_^) )',
@@ -38,10 +61,10 @@ const projects = [
 		status: 'BETA',
 		type: 'Script',
 		github: 'https://github.com/D-Zoro/PrAIya.git',
-		demo: '#',
+		demo: null,
 	},
 	{
-		id: '04',
+		id: '02',
 		title: 'AIRO',
 		description:
 			'Real time air pollution prediction using trained ai models based on data set from ground and satellite stations',
@@ -49,10 +72,10 @@ const projects = [
 		status: 'DEVELOPMENT',
 		type: 'AIML Application',
 		github: 'https://github.com/D-Zoro/protoType.git',
-		demo: '#',
+		demo: null,
 	},
 	{
-		id: '05',
+		id: '07',
 		title: 'Search Engine Result Page',
 		description:
 			'Simple search engine result page implemented using serper api key for processing query',
@@ -63,14 +86,14 @@ const projects = [
 		demo: null,
 	},
 	{
-		id: '06',
+		id: '08',
 		title: 'Neonpulse Portfolio Core',
 		description:
 			'This very portfolio - a showcase of advanced web technologies and immersive 3D experiences.',
 		tech: ['Next.js', 'Three.js', 'Framer Motion', 'Tailwindcss'],
 		status: 'LIVE',
 		type: 'Portfolio',
-		github: 'https://github.com/D-Zoro/next-serp-app.git',
+		github: 'https://github.com/D-Zoro/neonpulse.git',
 		demo: '/',
 	},
 ];
